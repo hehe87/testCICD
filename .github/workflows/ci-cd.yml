@@ -14,12 +14,12 @@ jobs:
     environment:
       name: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
     env:
-      NAME: ${{vars.NAME}}
+      Name: ${{ vars.NAME }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: print
-        run: echo "to print env name: $NAME"
+      - name: print ${{ vars.Name}}
+        run: echo "to print env name:"
       
       
         
