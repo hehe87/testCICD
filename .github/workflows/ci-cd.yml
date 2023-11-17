@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+    env:
+      NAME: ${{vars.NAME}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: print
-        run: echo "$NAME"
+        run: echo "to print env name: $NAME"
       
       
         
